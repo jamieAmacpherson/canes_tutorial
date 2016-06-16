@@ -1,12 +1,13 @@
 ####################################################
 # canes_tutorial
-Tutorial on steered molecular dynamics for the CANES doctoral training program.
-This repository contains files used for a tutorial on steered molecular dynamics, 16.06.2016 James Macpherson.
+Tutorial on scientific computing and steered molecular dynamics for the CANES doctoral training program.
 #
-In this tutorial, students will learn how to prepare a small peptide structure for molecular dynamics simulation.
+In this tutorial, students will:
+ i)   Explore basic linux commands and functionalities (Jens)
+ ii)  Learn how to prepare a small peptide structure for molecular dynamics simulation (Jamie)
+ iii) Pull the helical peptide and calculate its potential of mean force using an umbrella sampling routine in gromacs (Jamie)
 #
-The directory contains a structure file (helix1.pdb) and three gromacs parameter files (ions.mdp, min.mdp, npt.mdp).
 #
-Email any questions to macpherson.js@gmail.com
+Email any questions to macpherson.js@gmail.com or jkleinj@gmail.com
 #####################################################
 
