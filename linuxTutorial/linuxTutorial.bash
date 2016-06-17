@@ -327,7 +327,7 @@ qstat
 srun --job-name tst --nodes=1 --ntasks-per-node=1 --ntasks=1 --cpus-per-task=1 -o output.o -e output.e submit_mull.bash &
 squeue
 # with MPI
-srun --job-name tst --nodes=1 --ntasks-per-node=1 --ntasks=1 --cpus-per-task=4 -o output_MPI.o -e output_MPI.e submit_mull.bash &
+srun --job-name tst --nodes=1 --ntasks-per-node=1 --ntasks=1 --cpus-per-task=4 -o output_MPI.o -e output_MPI.e submit_MPI_mull.bash &
 
 # Advice: Learn one scripting language (bash, Perl, Python) that allows you
 #   to automate repetitive processes, for example the analysis of replicas.
