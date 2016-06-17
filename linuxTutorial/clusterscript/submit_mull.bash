@@ -2,4 +2,5 @@
 
 hostname
 pwd
+sleep 20
 
