@@ -1,0 +1,21 @@
+# List the available nodes and queues (partitions)
+sinfo
+
+# Submit a sleep command for 60 seconds
+./submit_sleep.bash
+
+# List the job queue
+squeue
+
+# List the job ID and number of cores
+squeue -o %A,%C
+
+# Submit an MPI job, which runs on several cores in parallel.
+# The program simulates a match score of all pairs among 6 items (for example sequences),
+#  where the score is assumed to be the sum of the items' IDs:
+# 0+1 = 1; 0+2 = 2; ...; 5+3=8; 5+4=9
+# The 6*5/2=15 pairwise matches are split between the number of assigned cores.
+# You will see the output of the local calculations and the global assembled array of results.
+./submit_mpidemo.bash
+# stdout and stderr are assigned to designated files.
+ 
