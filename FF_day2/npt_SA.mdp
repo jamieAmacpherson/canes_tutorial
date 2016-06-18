@@ -1,0 +1,74 @@
+title       = Simulated Annealing temp 0-300K 
+;define      = -DPOSRES_B
+; Run parameters
+integrator  = md
+dt          = 0.002
+tinit       = 0
+nsteps      = 500000     ; 1ns 
+nstcomm     = 10
+; Output parameters
+nstxout     = 0      ; every 10 ps
+nstvout     = 0 
+nstfout     = 0
+nstxtcout   = 5000
+nstenergy   = 5000
+; Bond parameters
+constraint_algorithm    = lincs
+constraints             = all-bonds
+continuation            = no 
+; Single-range cutoff scheme
+nstlist     = 5
+ns_type     = grid 
+rlist       = 1.4
+rcoulomb    = 1.4
+rvdw        = 1.4
+; PME electrostatics parameters
+coulombtype     = PME
+fourierspacing  = 0.12
+fourier_nx      = 0
+fourier_ny      = 0
+fourier_nz      = 0
+pme_order       = 4
+ewald_rtol      = 1e-5
+optimize_fft    = yes
+; Generate velocities is on 
+gen_vel     = yes 
+; Periodic boundary conditions are on in all directions
+pbc     = xyz
+; Long-range dispersion correction
+DispCorr    = EnerPres
+
+; Berendsen temperature coupling is on in two groups
+Tcoupl = no
+tau_t = 0 0
+tc-grps = protein other
+ref_t = 50 50
+solvent_optimization = sol
+; Energy monitoring
+energygrps = Protein other
+
+; Pressure coupling is on
+Pcoupl          = Parrinello-Rahman
+pcoupltype      = isotropic
+tau_p           = 1.0
+compressibility = 4.5e-5
+ref_p           = 1.0
+refcoord_scaling = com
+ 
+; SIMULATED ANNEALING 
+; Type of annealing for each temperature group (no/single/periodic)
+annealing = single single
+;Number of time points to use for specifying annealing in each group
+annealing_npoints = 9 9
+; List of times at the annealing points for each group
+annealing_time = 0 10 20 30 40 50 60 70 80 0 10 20 30 40 50
+60 70 80
+; Temp. at each annealing point, for each group.
+annealing_temp = 50 80 110 140 170 200 230 260 300 50 80 110
+140 170 200 230 260 300 
+
+; Generate velocites is on at 50 K.
+gen_vel = no
+gen_temp = 50.0
+gen_seed = 173529
+
