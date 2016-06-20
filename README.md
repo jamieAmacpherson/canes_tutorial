@@ -10,6 +10,6 @@ In this tutorial, students will:
 iii) Pull the helical peptide and calculate its potential of mean force using an umbrella sampling routine in gromacs (Jamie)
 #
 #
-Email any questions to macpherson.js@gmail.com or jkleinj@gmail.com
+Email any questions to me (macpherson.js@gmail.com), Jens (jkleinj@gmail.com) or Franca (franca.fraternali@googlemail.com).
 #####################################################
 
