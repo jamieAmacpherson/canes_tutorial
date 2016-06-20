@@ -1,0 +1,41 @@
+MD day 2:
+
+Today you will use steered molecular dynamics to pull apart the helix you equilibrated last time.
+
+#########################
+Step 1: pulling
+
+- copy over your equilibrated helical peptide into your account on mito (scp npt.gro canes'x'@159.92.55.65:~/)
+	- you will also need to copy over the other following files: topol.top and index.ndx
+	- look for the pulling parameter file in the tutorial github repository (https://github.com/jamieAmacpherson/canes_tutorial),
+	  it is called pull.mdp in MD_day2. You will also need pull_script.sh from this directory as well.
+	- once you have all the necessary files on mito you will need to copy them onto the cluster machines (mull-login) where you will be running
+	  your simulations (scp files canes'x'@mull-login:~/).
+
+- inspect the pulling parameter file. There are a number of defined parameters which you need to understand. Go to ftp://ftp.gromacs.org/pub/manual/manual-4.5.6.pdf 
+  and search for the 'pull code'.
+
+- when you are ready to submit your pulling simulation, execute the pulling script by typing: 
+	./pull_script.sh &
+
+	- Some things to consider:
+		- How many cores are you running your simulation on?
+		- How long to you expect your simulation to last? (short bench mark before starting the full run).
+
+- once your pulling experiment has finished (this may take a day or two), look into MD_day2 and find another structure 'hairpin.pdb'. You will be required
+  to perform the same procedure as you have done for the helical peptide: generate the topology, minimize, equilibrate and pull it apart.
+
+##########################
+Step 2: simulated annealing
+
+- In this step we are going to be unfolding the helical peptide, not using mechanical force, but by thermally denaturating it.
+
+- Look into MD_day2 file and find a simulated annealing parameter file 'SA_T300to800.mdp'. Start by inspecting the file, you may need to consult the gromacs-4.5 manual
+  for clarification (ftp://ftp.gromacs.org/pub/manual/manual-4.5.6.pdf).
+
+- Copy SA_T300to800.mdp first into your home directory in mito and then into mull-login (as you did in step 1).
+
+- Modify 'pull_script.sh' so that instead of calling pull.mdp you call SA_T300to800.mdp with '-f' flag of the grompp command. You can also change the output names as you
+  wish. (Any problems with the gromacs commands, the manual is really your friend here!).
+
+- Submit the simulated annealing job using your modified submission script. 
