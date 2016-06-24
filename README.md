@@ -10,6 +10,7 @@ In this tutorial, students will:
 iii) Pull the helical peptide and calculate its potential of mean force using an umbrella sampling routine in gromacs (Jamie)
 #
 #
+iv) Analyse the trajectories using the Gromacs tools and VMD (http://www.ks.uiuc.edu/Training/Tutorials/vmd/tutorial-html/vmd-tutorial-2009.html).
 Email any questions to me (macpherson.js@gmail.com), Jens (jkleinj@gmail.com) or Franca (franca.fraternali@googlemail.com).
 #####################################################
 
